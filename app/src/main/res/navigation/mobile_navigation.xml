@@ -18,5 +18,9 @@
         android:id="@+id/detailFragment"
         android:name="com.esteban.rodriguezo.movies20221.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="movie"
+            app:argType="com.esteban.rodriguezo.movies20221.server.model.Movie" />
+    </fragment>
 </navigation>

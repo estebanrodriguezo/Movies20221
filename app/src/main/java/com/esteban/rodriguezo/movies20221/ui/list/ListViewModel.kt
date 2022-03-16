@@ -3,6 +3,8 @@ package com.esteban.rodriguezo.movies20221.ui.list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.esteban.rodriguezo.movies20221.server.model.Movie
+import com.esteban.rodriguezo.movies20221.server.model.MoviesList
 import com.esteban.rodriguezo.movies20221.server.moviesrepository.MoviesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -17,7 +19,8 @@ class ListViewModel : ViewModel() {
 
     fun getMovies() {
         GlobalScope.launch(Dispatchers.IO){
-            loadMovies.postValue(moviesRepository.getMovies())
+            val moviesList: MoviesList = moviesRepository.getMovies()
+            loadMovies.postValue(moviesList.moviesList as ArrayList<Movie>)
         }
     }
 
