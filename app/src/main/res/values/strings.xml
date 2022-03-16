@@ -5,4 +5,5 @@
     <string name="release_date">30-nov-2020</string>
     <string name="vote_average_label">Vote average:</string>
     <string name="vote_average_text">10</string>
+    <string name="summary">Summary</string>
 </resources>
